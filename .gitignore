@@ -1,0 +1,7 @@
+# Gemini CLI commands
+.gemini/commands/*
+!.gemini/commands/*.toml
+
+# OS files
+.DS_Store
+Thumbs.db

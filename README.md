@@ -1,8 +1,11 @@
 # better-readmes
 
 [![skills.sh](https://skills.sh/b/ElioUcan/better-readmes)](https://skills.sh/ElioUcan/better-readmes)
+![Multi-CLI compatible](https://img.shields.io/badge/Multi--CLI-Compatible-success?style=for-the-badge)
 
 ## 🛠️ Technologies
+![Gemini CLI](https://img.shields.io/badge/Gemini_CLI-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)
+![Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white)
 ![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
 ![GitHub CLI](https://img.shields.io/badge/GitHub_CLI-181717?style=for-the-badge&logo=github&logoColor=white)
@@ -25,16 +28,34 @@ For developers who want better README structure and GitHub publication without t
 
 ## 🔧 Process
 
-Built as two Claude Code skills, each defined by a strict step-by-step Markdown protocol that the model follows in order. The design is inference-first: `/write-readme` scans config and entry-point files to fill in everything it can before asking the user, and only prompts one question at a time for what genuinely can't be inferred. `/publish-readme` is structured as a guarded pipeline — prerequisite checks, remote detection, then metadata generation — so it stops with clear instructions rather than failing midway.
+Built as a multi-CLI compatible system, each adapter follows a strict step-by-step protocol. The design is inference-first: `/write-readme` scans config and entry-point files to fill in everything it can before asking the user, and only prompts one question at a time for what genuinely can't be inferred. `/publish-readme` is structured as a guarded pipeline — prerequisite checks, remote detection, then metadata generation — so it stops with clear instructions rather than failing midway.
 
-## ▶️ Running the project
+## 🔌 Installation
 
-Install the skills from the [skills.sh](https://skills.sh/ElioUcan/better-readmes) registry:
-
+### ♊ Gemini CLI
 ```bash
-npx skills add ElioUcan/better-readmes@write-readme
-npx skills add ElioUcan/better-readmes@publish-readme
+mkdir -p ~/.gemini/commands
+cp .gemini/commands/*.toml ~/.gemini/commands/
 ```
+
+### 🤖 Copilot CLI (GitHub)
+```bash
+mkdir -p .github/instructions
+# (Copy files from this repo to your own)
+```
+
+### 🔓 Open Code / Opencode
+```bash
+mkdir -p .opencode/instructions
+# (Copy files from this repo to your own)
+```
+
+### 🎭 Claude Code
+```bash
+npx skills add ElioUcan/better-readmes @write-readme/**
+```
+
+## ▶️ Usage
 
 **Step 1 — Generate the README.** From your project directory, run:
 
@@ -49,3 +70,5 @@ npx skills add ElioUcan/better-readmes@publish-readme
 ```
 
 > `/publish-readme` requires the [GitHub CLI](https://cli.github.com) installed and authenticated (`gh auth login`).
+
+Check the [README.sharing.md](./README.sharing.md) for detailed CLI compatibility info.
